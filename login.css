@@ -1,0 +1,89 @@
+/* Body with a gradient background */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensures the content fills the viewport height */
+    background: linear-gradient(90deg, #2c467b, #561603); /* Gradient background */
+    font-family: Arial, sans-serif; /* Default font for consistency */
+}
+
+/* Container for inputs and other content */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 4em 2em;
+    background-color: #171717;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    min-height: 400px;
+    margin: 50px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for the container */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Input fields styling */
+.input-field {
+    padding: 1.2em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #252525;
+    color: #d3d3d3;
+    font-size: 1em;
+}
+
+/* Button styling */
+.button {
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #252525;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: black;
+    transform: scale(1.05);
+}
+
+/* Image styling (adjust size for responsiveness) */
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Adds rounded corners */
+    margin-top: 10px; /* Space between inputs and image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 3em 1.5em;
+        gap: 15px;
+        min-height: 350px; /* Adjust height for tablets and smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 2em 1em;
+        min-height: 300px; /* Adjust height for smaller devices */
+    }
+
+    .input-field,
+    .button {
+        font-size: 0.9em;
+    }
+}

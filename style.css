@@ -1,0 +1,269 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+NG+Modern:wght@100..400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+
+body {
+    background: url('assets/webBg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: azure;
+    margin: 0;
+    padding: 0;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+}
+
+
+/* adding responsiveness and styling the webheading */
+
+#web-heading {
+    font-family: "Honk", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "MORF" 15, "SHLN" 50;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 20px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    #web-heading {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #web-heading {
+        font-size: 1.5rem;
+        white-space: normal;
+        /* Ensures the text wraps on smaller screens */
+    }
+}
+
+
+.main-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.video-div {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.video-div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px cyan;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* button {
+    margin: 12px;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+        inset -5px -5px 10px #222;
+    font-family: "Damion", cursive;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    transition: 500ms;
+}
+
+button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+        inset -5px -5px 10px #444;
+    color: #d6d6d6;
+    transition: 500ms;
+} */
+
+@media (min-width: 768px) {
+    .video-div {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .video-content {
+        flex: 1;
+    }
+
+    .button-container {
+        flex-shrink: 0;
+        margin-left: 20px;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    iframe {
+        height: 400px;
+        width: auto;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* button from External Styling*/
+
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+
+.shadow__btn {
+    background: rgb(0, 140, 255);
+    box-shadow: 0 0 25px rgb(0, 140, 255);
+}
+
+.shadow__btn:hover {
+    box-shadow: 0 0 5px rgb(0, 140, 255),
+        0 0 25px rgb(0, 140, 255),
+        0 0 50px rgb(0, 140, 255),
+        0 0 100px rgb(0, 140, 255);
+}
+
+/* From Uiverse.io by catraco */
+.heart-container {
+    --heart-color: rgb(255, 91, 137);
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transition: .3s;
+}
+
+.heart-container .checkbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.heart-container .svg-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-container .svg-outline,
+.heart-container .svg-filled {
+    fill: var(--heart-color);
+    position: absolute;
+}
+
+.heart-container .svg-filled {
+    animation: keyframes-svg-filled 1s;
+    display: none;
+}
+
+.heart-container .svg-celebrate {
+    position: absolute;
+    animation: keyframes-svg-celebrate .5s;
+    animation-fill-mode: forwards;
+    display: none;
+    stroke: var(--heart-color);
+    fill: var(--heart-color);
+    stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-filled {
+    display: block
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-celebrate {
+    display: block
+}
+
+@keyframes keyframes-svg-filled {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1);
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes keyframes-svg-celebrate {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+        display: none;
+    }
+}
